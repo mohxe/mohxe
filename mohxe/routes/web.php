@@ -13,11 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+$domains = new stdClass();
+$domains->guest = "mohxe.io";
+$domains->blog = "blog.mohxe.io";
+$domains->admin = "admin.mohxe.io";
+$domains->blog = "blog.mohxe.io";
+$domains->wink = "wink.mohxe.io";
+
+
+
+# Blog
+Route::domain($domains->blog)->group(function(){
+    Route::get("/{slug}", "blog\PostsViewController@showViewAction");
+    Route::get("/", "blog\PostsViewController@indexViewAction");
+});
+
+# Admin
+Route::domain($domains->admin)->group(function(){
+    Voyager::routes();
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+# Guest
+Route::domain($domains->guest)->group(function() {
+    Route::get('/', function () {
+        return view('welcome');
+    });    
 });
