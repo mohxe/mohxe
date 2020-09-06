@@ -1,5 +1,8 @@
 ### mohxe 👋
 An open source website for creativity.
+
+## INSTALLATION GUIDE
+.....
 <!--
 **mohxe/mohxe** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
