@@ -5,9 +5,16 @@ module.exports = {
   },
   purge: ["./src/**/*.svelte"],
   theme: {
+ 
     extend: {
       backgroundImage: theme => ({
         'brown-brick': 'url(/images/brown-brick.jpg)'
+      }),
+      inset: theme =>({
+        '12': '3rem'
+      }),
+      zIndex: theme =>({
+        '100': '100'
       })
     },
     screen: {
